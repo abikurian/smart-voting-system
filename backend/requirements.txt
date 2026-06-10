@@ -1,0 +1,9 @@
+ultralytics
+facenet-pytorch
+scikit-learn
+fastapi
+uvicorn
+python-multipart
+torch
+torchvision
+opencv-python

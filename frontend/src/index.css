@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF9D2;
+  --color-peach: #FFEBCC;
+  --color-skyblue: #BFDDF0;
+  --color-mediumblue: #8CC0EB;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-slate-900 antialiased font-sans min-h-screen overflow-x-hidden selection:bg-mediumblue/30 selection:text-slate-900;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(140, 192, 235, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(191, 221, 240, 0.2) 0px, transparent 50%);
+  }
+
+  /* Custom premium scrollbar matching theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #BFDDF0;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8CC0EB;
+  }
+}
+
+/* Animations for Biometric Light Scan */
+@keyframes laser-sweep {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(240px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes perimeter-pulse {
+  0%, 100% {
+    border-color: rgba(140, 192, 235, 0.3);
+    box-shadow: 0 0 12px -2px rgba(140, 192, 235, 0.2), inset 0 0 12px -2px rgba(140, 192, 235, 0.1);
+  }
+  50% {
+    border-color: rgba(140, 192, 235, 0.85);
+    box-shadow: 0 0 20px 1px rgba(140, 192, 235, 0.4), inset 0 0 20px 1px rgba(140, 192, 235, 0.2);
+  }
+}
+
+@keyframes corner-glow {
+  0%, 100% {
+    border-color: rgba(140, 192, 235, 0.6);
+    filter: drop-shadow(0 0 2px rgba(140, 192, 235, 0.4));
+  }
+  50% {
+    border-color: rgba(140, 192, 235, 1);
+    filter: drop-shadow(0 0 5px rgba(140, 192, 235, 0.6));
+  }
+}
+
+@keyframes dot-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Biometric Scanner styling classes */
+.scan-laser {
+  animation: laser-sweep 4s ease-in-out infinite;
+}
+
+.scan-perimeter {
+  animation: perimeter-pulse 3s ease-in-out infinite;
+}
+
+.scan-corner {
+  animation: corner-glow 2s ease-in-out infinite;
+}
+
+.scan-dot {
+  animation: dot-blink 1.5s ease-in-out infinite;
+}
+
+/* Light Theme Dashboard Components */
+.dashboard-card {
+  background-color: #FFEBCC;
+  border: 1px solid #BFDDF0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-card-glow {
+  background-color: #FFEBCC;
+  border: 2px solid #8CC0EB;
+  box-shadow: 0 0 20px rgba(140, 192, 235, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-input {
+  background-color: #ffffff;
+  border: 1px solid #BFDDF0;
+  color: #0f172a; /* slate-900 */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-input:focus {
+  background-color: #ffffff;
+  border-color: #8CC0EB;
+  box-shadow: 0 0 0 2px rgba(140, 192, 235, 0.35);
+  outline: none;
+}

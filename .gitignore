@@ -1,0 +1,20 @@
+# Dependency folders
+node_modules/
+
+# Python caching and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local SQLite databases and vector embeddings
+backend/data/
+
+# Model weights
+backend/yolov8n-face.pt
+yolov8n-face.pt
+*.pt
+
+# OS specific temporary files
+.DS_Store
+Thumbs.db
