@@ -28,6 +28,7 @@ The platform uses a split-process decoupled architecture to isolate high-intensi
 
 ## 🧠 Biometric Engine AI Pipeline
 
+
 The verification mechanism executes sequentially across three distinct artificial intelligence layers whenever a face frame is fed to the API service:
 
 ```text
